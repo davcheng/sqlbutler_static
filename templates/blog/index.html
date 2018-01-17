@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="large-6 columns">
+    <h2>Input</h2>
+    <p>Enter table name:</p>
+        <input type="text" name="table_name" placeholder="TABLE_NAME" />
+        <br>
+    <p>Paste table contents:</p>
+        <textarea id="table_data" name="table_data" placeholder="TABLE CONTENTS (Don't worry about formatting)" style="height: 300px;"></textarea><br>
+        <input type="button" class="button" onclick="generateCreate(), generateInsert()" value="Generate"/>
+</div>
+<div class="large-6 columns">
+    
+
+
+    <h2>Output</h2>
+    
+    <div id="create_statement"><p>SQL statements will appear here.</p></div>
+    <br>
+    <div class="sample">
+        <h2>Try this:</h2>
+            <table width="100%" border="0" cellpadding="3" cellspacing="0">
+        <tbody><tr>
+        <td width="50%" align="center" valign="top">Person</td>
+        </tr>
+        <tr>
+        <td align="center" valign="top">
+        <table width="100" border="1" cellpadding="3" cellspacing="0" bordercolor="#666666">
+        <tbody><tr>
+        <td>ID </td>
+        <td> Name </td>
+        <td> Age </td>
+        <td> Salary </td>
+        <td> City </td>
+        </tr>
+        <tr>
+        <td> 1 </td>
+        <td> Abe </td>
+        <td> 61 </td>
+        <td> 140000 </td>
+        <td> NYC </td>
+        </tr>
+        <tr>
+        <td> 2 </td>
+        <td> Bob </td>
+        <td> 34 </td>
+        <td> 44000 </td>
+        <td> DC </td>
+        </tr>
+        <tr>
+        <td> 5 </td>
+        <td> Chris </td>
+        <td> 34 </td>
+        <td> 40000 </td>
+        <td> MIA </td>
+        </tr>
+        <tr>
+        <td> 7 </td>
+        <td> Dan </td>
+        <td> 41 </td>
+        <td> 52000 </td>
+        <td> LA </td>
+        </tr>
+        <tr>
+        <td> 8 </td>
+        <td> Ken </td>
+        <td> 57 </td>
+        <td> 115000 </td>
+        <td> SF </td>
+        </tr>
+        <tr>
+        <td> 11 </td>
+        <td> Joe </td>
+        <td> 38 </td>
+        <td> 38000 </td>
+        <td> ATL </td>
+        </tr>
+        </tbody></table>
+        </td>
+        <td align="center" valign="top">
+        </table>
+    </div>
+    <div id="insert_statement"></div>
+    
+    <div id="preview-header"></div>
+    <div id="table_preview"></div>
+</div>
+{% endblock %}
+
+
+
+
+
