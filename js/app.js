@@ -64,7 +64,7 @@ function generateCreate(){
 	var statement = "<span class='kwd'>CREATE TABLE </span>" + $('input[name=table_name]').val().split(' ').join('_') +" (";
     var data = $('textarea[name=table_data]').val();
 	var rows = data.split("\n");
-	
+
 	var headers = rows[0].split("\t");
 	for (var header in headers){
 		statement += headers[header].split(' ').join('_');
@@ -109,10 +109,17 @@ function generateInsert(){
 			//check if number of cells equals number of columns
 			if (rowCellCount==columnCount){
 				for(var cell in cells){
+					// check for apostrophes and add an extra ' to account for SQL escaping
+					apostrophe_index = cells[cell].indexOf("'");
+					if (apostrophe_index !== -1) {
+						// replace ' with '' to escape for SQL statements
+						cells[cell] = cells[cell].split("'").join("''");
+					}
+
+					// statement += '<span class="str">"' + cells[cell] + '"</span>';
 					statement += "<span class='str'>'" + cells[cell] + "'</span>";
 					if (cell<cells.length-1){
 						statement+=", ";
-
 					}
 					else{
 						if (row<rows.length-1){
@@ -127,6 +134,8 @@ function generateInsert(){
 			else{
 				//loop through all cells in the incomplete row
 				for(var cel in cells){
+					console.log(cells[cel]);
+					// console.log(cel);
 					// if the current cell has any contents
 					if (cells[cel].length > 0){
 						statement += "<span class='str'>'" + cells[cel] + "'</span>";

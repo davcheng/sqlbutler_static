@@ -59,23 +59,22 @@
               <p>Enter table name:</p>
                   <input type="text" name="table_name" placeholder="TABLE_NAME" />
                   <br>
-              <p>Paste table contents:</p>
-                  <textarea id="table_data" name="table_data" placeholder="TABLE CONTENTS (Don't worry about formatting)" style="height: 300px;"></textarea><br>
+              <p>Paste table contents here:</p>
+                  <textarea id="table_data" name="table_data" placeholder="TABLE CONTENTS (from excel or html tables)" style="height: 300px;"></textarea><br>
                   <input type="button" class="button" onclick="generateCreate(), generateInsert()" value="Generate"/>
           </div>
           <div class="large-6 columns">
-
-
 
               <h2>Output</h2>
 
               <div id="create_statement"><p>SQL statements will appear here.</p></div>
               <br>
               <div class="sample">
-                  <h2>Try this:</h2>
-                      <table width="100%" border="0" cellpadding="3" cellspacing="0">
+                  <h2>Try this</h2>
+                    <span>Copy the table below and paste it on the left</span>
+                    <table width="100%" border="0" cellpadding="3" cellspacing="0">
                   <tbody><tr>
-                  <td width="50%" align="center" valign="top">Person</td>
+                  <td width="50%" align="center" valign="top"><strong>Table Name:</strong> Person</td>
                   </tr>
                   <tr>
                   <td align="center" valign="top">
